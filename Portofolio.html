@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id" x-data="{ dark: true }" :class="{ 'dark': dark }">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio | Muhammad Abdullah Arridho</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  <!-- Alpine JS -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    [x-animate] {
+      transition: all 0.7s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+
+  <!-- HEADER -->
+  <header class="bg-white dark:bg-gray-800 shadow transition-all duration-700" x-animate>
+    <div class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+      <div>
+        <h1 class="text-3xl font-bold">Muhammad Abdullah Arridho</h1>
+        <p class="mt-1 flex items-center gap-2 text-gray-600 dark:text-gray-400">
+          <i class="fa-solid fa-code text-blue-500"></i>
+          Web Developer | IT | Informatics Engineering
+        </p>
+      </div>
+
+      <!-- TOGGLE -->
+      <button 
+        @click="dark = !dark"
+        class="text-xl p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+        title="Toggle Dark Mode"
+      >
+        <i :class="dark ? 'fa-solid fa-sun text-yellow-400' : 'fa-solid fa-moon text-gray-700'"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6" x-animate>
+    <div class="md:col-span-1 bg-white dark:bg-gray-800 p-6 rounded shadow text-center">
+      <div class="h-40 w-40 mx-auto bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-full overflow-hidden">
+        <img 
+          src="me.png" 
+          alt="Foto Profil"
+          class="w-full h-full object-cover"
+          onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-user text-4xl text-gray-400\'></i>'"
+        >
+      </div>
+
+      <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">
+        <i class="fa-solid fa-graduation-cap mr-1"></i>
+        Lulusan S1 Teknik Informatika
+      </p>
+    </div>
+
+    <div class="md:col-span-2 bg-white dark:bg-gray-800 p-6 rounded shadow">
+      <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
+        <i class="fa-solid fa-user-circle text-blue-500"></i>
+        Tentang Saya
+      </h2>
+      <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+        Web Developer dengan pengalaman membangun website dari nol, pengembangan fitur,
+        dan maintenance sistem pada lingkungan pesantren dan perusahaan.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="max-w-6xl mx-auto px-6 pb-10" x-animate>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
+      <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-laptop-code text-blue-500"></i>
+        Keahlian
+      </h2>
+
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded">
+          <i class="fa-solid fa-globe mr-1"></i> Web Programming
+        </span>
+        <span class="px-4 py-2 bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 rounded">
+          <i class="fa-brands fa-html5 mr-1"></i> HTML
+        </span>
+        <span class="px-4 py-2 bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 rounded">
+          <i class="fa-brands fa-css3-alt mr-1"></i> CSS
+        </span>
+        <span class="px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 rounded">
+          <i class="fa-brands fa-js mr-1"></i> JavaScript
+        </span>
+        <span class="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded">
+          <i class="fa-brands fa-android mr-1"></i> Android
+        </span>
+        <span class="px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded">
+          <i class="fa-solid fa-database mr-1"></i> MySQL
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="max-w-6xl mx-auto px-6 pb-10" x-animate>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
+      <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+        <i class="fa-solid fa-diagram-project text-blue-500"></i>
+        Proyek
+      </h2>
+
+      <div class="border border-gray-200 dark:border-gray-700 rounded p-4 mb-4 transition hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="font-semibold flex items-center gap-2">
+          <i class="fa-solid fa-building-columns"></i>
+          Website Manajemen Pesantren
+        </h3>
+        <p class="text-sm text-gray-500">PP Miftahul Jannah</p>
+
+        <div class="h-40 bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-sm text-gray-400 my-3 rounded overflow-hidden">
+          <img src="mj.png" class="w-full h-full object-cover">
+        </div>
+
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Sistem pesantren dari nol dengan fitur administrasi, pelanggaran terintegrasi WhatsApp,
+          e-bekal, dan absensi kegiatan.
+        </p>
+      </div>
+
+      <div class="border border-gray-200 dark:border-gray-700 rounded p-4 transition hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="font-semibold flex items-center gap-2">
+          <i class="fa-solid fa-school"></i>
+          Website Manajemen Pesantren
+        </h3>
+        <p class="text-sm text-gray-500">Ma'had Nurul Hasyimi</p>
+
+        <div class="h-40 bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-400 my-3 rounded">
+          <i class="fa-solid fa-wrench mr-2"></i> Maintenance & Feature Development
+        </div>
+
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Pengembangan fitur, e-raport, dan absensi Face ID.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-gray-800 shadow mt-10" x-animate>
+    <div class="max-w-6xl mx-auto px-6 py-6 text-sm text-gray-500 space-y-1">
+      <p><i class="fa-solid fa-envelope mr-2"></i>abdullaharridho03@gmail.com</p>
+      <p><i class="fa-solid fa-phone mr-2"></i>0877-3419-7664</p>
+      <p><i class="fa-solid fa-location-dot mr-2"></i>Probolinggo, Jawa Timur</p>
+    </div>
+  </footer>
+
+  <!-- SCROLL ANIMATION -->
+  <script>
+    document.addEventListener("alpine:init", () => {
+      Alpine.directive("animate", (el) => {
+        el.classList.add("opacity-0", "translate-y-6");
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              el.classList.remove("opacity-0", "translate-y-6");
+              el.classList.add("opacity-100", "translate-y-0");
+            }
+          },
+          { threshold: 0.2 }
+        );
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+</html>
